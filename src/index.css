@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --primary: 267 85% 65%;
+    --primary-foreground: 0 0% 98%;
+    --glow: 267 85% 65%;
+  }
+
+  :root.light {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 98%;
+    --card-foreground: 240 10% 3.9%;
+    --border: 240 5.9% 90%;
+    --primary: 267 85% 55%;
+    --primary-foreground: 0 0% 98%;
+    --glow: 267 85% 55%;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.hero-grid {
+  background-image: 
+    linear-gradient(to right, hsl(var(--primary)/.1) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--primary)/.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.hero-glow {
+  background: 
+    radial-gradient(circle at 50% 50%, 
+      hsl(var(--primary)/.15) 0%,
+      transparent 70%);
+}
+
+.glow-border {
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(from var(--angle), 
+    hsl(var(--primary)), 
+    hsl(var(--glow)/.5),
+    hsl(var(--primary)));
+  border-radius: 0.6rem;
+  animation: rotate 4s linear infinite;
+  z-index: -1;
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+body {
+  @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
+}
+
+[dir="rtl"] .flip-x {
+  @apply -scale-x-100;
+}
