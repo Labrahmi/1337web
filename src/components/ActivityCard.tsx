@@ -9,12 +9,12 @@ interface ActivityCardProps {
 
 export function ActivityCard({ image, title, date, description }: ActivityCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-xl bg-[hsl(var(--card))] transition-all hover:scale-[1.02] glow-border">
+    <div className="group select-none relative overflow-hidden rounded-xl bg-[hsl(var(--card))] transition-all glow-border shadow">
       <div className="aspect-video w-full overflow-hidden">
         <img
           src={image}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--card))] to-transparent opacity-50" />
       </div>

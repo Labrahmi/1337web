@@ -58,7 +58,7 @@
     linear-gradient(to right, hsl(var(--primary)/.1) 1px, transparent 1px),
     linear-gradient(to bottom, hsl(var(--primary)/.1) 1px, transparent 1px);
   background-size: 50px 50px;
-  animation: pulse 4s ease-in-out infinite;
+  /* animation: pulse 4s ease-in-out infinite; */
 }
 
 .hero-glow {
@@ -82,12 +82,12 @@
     hsl(var(--glow)/.5),
     hsl(var(--primary)));
   border-radius: 0.6rem;
-  animation: rotate 4s linear infinite;
+  /* animation: rotate 4s linear infinite; */
   z-index: -1;
 }
 
 .floating {
-  animation: float 3s ease-in-out infinite;
+  /* animation: float 3s ease-in-out infinite; */
 }
 
 body {

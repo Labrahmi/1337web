@@ -11,28 +11,28 @@ function App() {
 
   const activities = [
     {
-      image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4',
-      title: 'React Workshop Series',
-      date: language === 'en' ? 'March 2024' : 'مارس ٢٠٢٤',
+      image: '/1710205036991.jpeg',
+      title: 'Workshop by Mr Diaa',
+      date: '11-03-2024',
       description: language === 'en' 
-        ? 'Three-day intensive workshop covering React fundamentals and advanced patterns.'
-        : 'ورشة عمل مكثفة لمدة ثلاثة أيام تغطي أساسيات React والأنماط المتقدمة.'
+        ? 'A workshop about securing employment and internships, providing students with practical insights and expert guidance.'
+        : 'ورشة حول كيفية الحصول على وظائف وتداريب أطرها السيد ضياء الحق الفلوس، اللي قدم للطلاب نصائح عملية وتوجيهات قيمة.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0',
-      title: language === 'en' ? 'Hackathon 2024' : 'هاكاثون ٢٠٢٤',
-      date: language === 'en' ? 'February 2024' : 'فبراير ٢٠٢٤',
+      image: '/1704575141651.jpeg',
+      title: 'Workshop by amait-ou',
+      date: '06-01-2024',
       description: language === 'en'
-        ? '48-hour coding challenge where teams built innovative web applications.'
-        : 'تحدي برمجة لمدة ٤٨ ساعة حيث قامت الفرق ببناء تطبيقات ويب مبتكرة.'
+        ? 'The "Web Dev 2024: The Roadmap" workshop provided essential insights into the latest web development trends and skills.'
+        : 'ورشة "تطوير الويب 2024: الخريطة" قدمت نظرة شاملة على أحدث التوجهات والمهارات في تطوير الويب.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87',
-      title: language === 'en' ? 'Tech Talk: Future of Web' : 'محاضرة تقنية: مستقبل الويب',
-      date: language === 'en' ? 'January 2024' : 'يناير ٢٠٢٤',
+      image: '/10093403.webp',
+      title: 'Speed Typing',
+      date: '20-12-2023',
       description: language === 'en'
-        ? 'Industry experts discussed emerging web technologies and career opportunities.'
-        : 'ناقش خبراء الصناعة تقنيات الويب الناشئة وفرص العمل.'
+        ? 'Winning Team: Ziyani, Mrital, Mehdi'
+        : 'الفريق الفائز: زياني، مريتل، مهدي'
     }
   ];
 
@@ -50,7 +50,7 @@ function App() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative h-screen flex items-center justify-center overflow-hidden">
+      <div className="relative h-[50rem] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 hero-grid opacity-20" />
         <div className="absolute inset-0 hero-glow" />
         
@@ -65,9 +65,9 @@ function App() {
               &gt; {t('subtitle')}
               <span className="inline-block w-3 h-8 ml-1 bg-[hsl(var(--primary))] animate-pulse" />
             </p>
-            <button className="glow-border bg-[hsl(var(--card))] text-[hsl(var(--primary))] font-bold py-3 px-8 transition-all hover:scale-105 hover:text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--primary))]">
+            <a target='_blank' href='https://www.instagram.com/1337webclub/' className="glow-border bg-[hsl(var(--card))] text-[hsl(var(--primary))] font-bold py-3 px-8 transition-all hover:scale-105 hover:text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--primary))]">
               {t('joinButton')}
-            </button>
+            </a>
           </div>
         </div>
 
@@ -75,7 +75,7 @@ function App() {
       </div>
 
       {/* Features Grid */}
-      <div id="features" className="max-w-6xl mx-auto px-4 py-24">
+      <div id="features" className="max-w-6xl mx-auto px-4 py-24 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <FeatureCard
